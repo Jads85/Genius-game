@@ -31,7 +31,7 @@ let ligntColor = (element,number) =>{
 let checkOrder = () =>{
     for (let i in orderClick){
         if (orderClick = [i] != order[i]){
-            lose();
+            gameOver();
             break;
         }
     }
@@ -47,6 +47,43 @@ let click = (color) =>{
 
     setTimeout(()=>{
         elementColor(color).classList.remove('selected');
+        checkOrder();
     })
-    checkOrder();
+    
 }
+//retorno de cor
+let createColorElement=(color)=>{
+    if(color == 0){
+        return green;
+    }else if(color == 1){
+        return red;
+    }else if (color == 2){
+        return yellow;
+    }else if (color == 3){
+        return blue;
+    }
+}
+
+let nextLevel = () =>{
+    score++;
+    shuffleOrder();
+}
+
+let gameOver = () =>{
+    alert(`Game Over!\nSua pontuação foi:${score}\nNão desista clique em ok e recomece!`);
+    order=[];
+    orderClick=[];
+    playGame();
+}
+
+let playGame = () =>{
+    alert('Bem Vindo ao Game of colors!');
+    score=0;
+    nextLevel();
+}
+green.onClick =() => click(0);
+red.onClick =() => click(1);
+yellow.onClick =() => click(2);
+blue.onClick =() => click(3);
+
+playGame()
