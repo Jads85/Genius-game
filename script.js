@@ -1,5 +1,5 @@
 let order = [];
-let orderClick=[];
+let clickedOrder=[];
 let score = 0;
 
 const red = document.querySelector('.red');
@@ -7,52 +7,52 @@ const green = document.querySelector('.green');
 const blue = document.querySelector('.blue');
 const yellow = document.querySelector('.yellow');
 
-let aleatorio = () => {
+let shuffleOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
     order[order.length] = colorOrder;
-    orderClick = [];
+    clickedOrder = [];
 
     for(let i in order) {
-        let elementColor= createColorElement(order[i]);
-        lightColor(elementColor,Number(i) + 1 );
+        let elementColor = createColorElement(order[i]);
+        ligntColor(elementColor ,Number(i) + 1 );
     }
 }
 
 let ligntColor = (element,number) =>{
-    time = time * 500;
+    number = number * 500;
     setTimeout(() =>{
         element.classList.add('selected');
-    },number - 250);
+    },number - 300);
     setTimeout(() =>{
         element.classList.remove('selected');
-    })
+    },number);
 }
 
 let checkOrder = () =>{
-    for (let i in orderClick){
-        if (orderClick = [i] != order[i]){
+    for (let i in clickedOrder){
+        if (clickedOrder[i] != order[i]){
             gameOver();
             break;
         }
     }
-    if (orderClick.length == order.length){
+    if (clickedOrder.length == order.length){
         alert(`Pontuação: ${score}\nVocê acertou! Voando para o proximo nivel!`);
         nextLevel();
     }
 }
 
 let click = (color) =>{
-    orderClick[orderClick.length] = color;
-    elementColor(color).classList.add('selected');
+    clickedOrder[clickedOrder.length] = color;
+    createColorElement(color).classList.add('selected');
 
     setTimeout(()=>{
-        elementColor(color).classList.remove('selected');
+        createColorElement(color).classList.remove('selected');
         checkOrder();
-    })
+    },250)
     
 }
 //retorno de cor
-let createColorElement=(color)=>{
+let createColorElement = (color)=>{
     if(color == 0){
         return green;
     }else if(color == 1){
@@ -65,14 +65,14 @@ let createColorElement=(color)=>{
 }
 
 let nextLevel = () =>{
-    score++;
-    shuffleOrder();
+   score++;
+   shuffleOrder();
 }
 
 let gameOver = () =>{
     alert(`Game Over!\nSua pontuação foi:${score}\nNão desista clique em ok e recomece!`);
     order=[];
-    orderClick=[];
+    clickedOrder=[];
     playGame();
 }
 
@@ -81,9 +81,9 @@ let playGame = () =>{
     score=0;
     nextLevel();
 }
-green.onClick =() => click(0);
-red.onClick =() => click(1);
-yellow.onClick =() => click(2);
-blue.onClick =() => click(3);
+green.onclick =() => click(0);
+red.onclick =() => click(1);
+yellow.onclick =() => click(2);
+blue.onclick =() => click(3);
 
 playGame()

@@ -13,14 +13,12 @@ body{
     display: grid;
     grid-template-areas: 'verde vermelho' 'amarelo azul';
     grid-gap: 10px;
-    border: 1px solid rgb(19, 18, 18);
+    border: 5px solid rgb(19, 18, 18);
     background-color: #fff;
     border-radius: 100%;
-    height: 600px;
-    width: 600px;
+    height: 610px;
+    width: 610px;
 }
-
-
 
 .red{
     grid-area: vermelho;
@@ -47,5 +45,5 @@ body{
 }
 
 .selected{
-    opacity: 0.8;
+    opacity: 0.6;
 }
