@@ -9,7 +9,7 @@ sempre dentro de uma casa noturna, jogando o Genius (na verdade, o Simon) e dan�
 No Brasil o jogo só virou moda mesmo nos 80, já na fase technopop, sob o inexplicável nome de 'Genius', pela Estrela. 
 Ele não exigia nenhum raciocínio lógico; apenas memória e um pouco de reflexo, mas escolheram esse nome, como naquelas traduções de títulos de filmes, 
 que mudam completamente o sentido, talvez jogos como o Scotland Yard, War 1 e 2 ou Atari poderiam ser chamados de Genius, porque exigiam um pouco mais de 
-raciocínio do jogador... Well, anyway, ele estourou na época, resolvemos abordar este inesquecível brinquedo dos 80, criar um jogo online para você poder curtir em casa,
+raciocínio do jogador... Well, anyway, ele estourou na época, resolvemos abordar este inesquecível brinquedo dos 80, criar um jogo para você poder curtir em casa,
 e o manual explicando o jogo, como já fizemos com o Atari.
 
 ## O projeto
